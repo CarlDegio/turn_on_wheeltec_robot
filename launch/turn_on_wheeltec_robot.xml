@@ -1,0 +1,10 @@
+<launch>
+    <arg name="odom_frame_id"  default="odom_combined"/>
+    <node pkg="turn_on_wheeltec_robot" exec="turn_on_wheeltec_robot">
+        <param name="usart_port_name"    value="/dev/ttyUSB0"/>
+        <param name="serial_baud_rate"   value="115200"/>
+        <param name="odom_frame_id"      value="$(var odom_frame_id)"/>
+        <param name="robot_frame_id"     value="base_footprint"/>
+        <param name="gyro_frame_id"      value="gyro_link"/>
+    </node>
+</launch>
